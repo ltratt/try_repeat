@@ -28,6 +28,7 @@ $ try_repeat 3 ls /etc/motd
 $ echo $?
 0
 $ try_repeat 3 ls /doesntexist
+ls: /doesntexist: No such file or directory
 $ echo $?
 1
 $ try_repeat -v 3 ls /etc/motd

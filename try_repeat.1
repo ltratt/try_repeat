@@ -36,6 +36,7 @@ exits with the exit code of the last iteration of
 .Dl $ echo $?
 .Dl 0
 .Dl $ try_repeat 3 ls /doesntexist
+.Dl ls: /doesntexist: No such file or directory
 .Dl $ echo $?
 .Dl 1
 .Dl $ try_repeat -v 3 ls /etc/motd
