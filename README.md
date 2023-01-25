@@ -1,7 +1,7 @@
 # try_repeat
 
 `try_repeat` tries to run a command *n* times, exiting early if the command
-exits with a non-zero return code. This is useful when trying to find
+exits with a non-zero exit code. This is useful when trying to find
 intermittent failures in a command.
 
 
@@ -15,7 +15,7 @@ Options:
 
  * `-v` Print out the iteration number before executing `<cmd>`.
 
-`try_repeat` exits with the exit code of the last `<cmd>` run.
+`try_repeat` exits with the exit code of the last iteration of `<cmd>`.
 
 
 # Examples
