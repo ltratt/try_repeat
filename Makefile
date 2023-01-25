@@ -19,6 +19,6 @@ clean:
 distrib:
 	@read v?'try_repeat version: '; mkdir try_repeat-$$v; \
       cp try_repeat try_repeat.1 try_repeat-$$v; \
-	  cp Makefile.try_repeat try_repeat-$$v/Makefile; \
+	  cp Makefile try_repeat-$$v/Makefile; \
 	  tar cfz try_repeat-$$v.tar.gz try_repeat-$$v; \
 	  rm -rf try_repeat-$$v
