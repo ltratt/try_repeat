@@ -1,7 +1,8 @@
 # try_repeat
 
-`try_repeat` tries to run a command *n* times, aborting early if the command
-fails. This is useful when trying to find intermittent failures in a command.
+`try_repeat` tries to run a command *n* times, exiting early if the command
+exits with a non-zero return code. This is useful when trying to find
+intermittent failures in a command.
 
 
 # Usage
