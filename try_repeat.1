@@ -1,0 +1,52 @@
+.Dd $Mdocdate: January 25 2023 $
+.Dt TRY_REPEAT 1
+.Os
+.Sh NAME
+.Nm try_repeat
+.Nd Run a command 'n' times, exiting early if the command returns non-zero
+.Sh SYNOPSIS
+.Nm try_repeat
+.Op Fl v
+.Ar count
+.Ar command
+.Op Ar options ...
+.Sh DESCRIPTION
+.Nm
+tries to run a command *n* times, exiting early if the command
+exits with a non-zero exit code.
+This is useful when trying to find intermittent failures in a command.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl v
+Print out the iteration number before executing
+.Ar command .
+If
+.El
+.Pp
+.Nm
+exits with the exit code of the last iteration of
+.Ar command .
+.Sh EXAMPLES
+.Dl $ try_repeat 3 ls /etc/motd
+.Dl /etc/motd
+.Dl /etc/motd
+.Dl /etc/motd
+.Dl $ echo $?
+.Dl 0
+.Dl $ try_repeat 3 ls /doesntexist
+.Dl $ echo $?
+.Dl 1
+.Dl $ try_repeat -v 3 ls /etc/motd
+.Dl ===> 1: ls /etc/motd
+.Dl /etc/motd
+.Dl ===> 2: ls /etc/motd
+.Dl /etc/motd
+.Dl ===> 3: ls /etc/motd
+.Dl /etc/motd
+.Sh AUTHORS
+.An -nosplit
+.Nm
+was written by
+.An Laurence Tratt
+.Lk https://tratt.net/laurie/ .
