@@ -8,14 +8,14 @@ intermittent failures in a command.
 # Usage
 
 ```sh
-try_repeat [-hv] <count> <cmd> [<arg1> ... <argn>]
+try_repeat [-hv] <count> <command> [<arg1> ... <argn>]
 ```
 
 Options:
 
- * `-v` Print out the iteration number before executing `<cmd>`.
+ * `-v` Print out the iteration number before executing `<command>`.
 
-`try_repeat` exits with the exit code of the last iteration of `<cmd>`.
+`try_repeat` exits with the exit code of the last iteration of `<command>`.
 
 
 # Examples

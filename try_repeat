@@ -5,7 +5,7 @@
 # intermittent failures in a command.
 
 usage() {
-    echo "Usage: try_repeat [-hv] <count> <cmd> [<arg1> ... <argn>]" > /dev/stderr
+    echo "Usage: try_repeat [-hv] <count> <command> [<arg1> ... <argn>]" > /dev/stderr
     exit 1
 }
 
