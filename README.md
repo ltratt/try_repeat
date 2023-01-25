@@ -22,6 +22,9 @@ Options:
 
 ```sh
 $ try_repeat 3 ls /etc/motd
+/etc/motd
+/etc/motd
+/etc/motd
 $ echo $?
 0
 $ try_repeat 3 ls /doesntexist
