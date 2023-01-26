@@ -31,6 +31,6 @@ while [ $i -lt $count ]; do
     if [ $verbose -ne 0 ]; then
         echo "===> $((i + 1)): $@"
     fi
-    eval $@ || exit $?
+    "$@" || exit $?
     i=$(($i + 1))
 done
