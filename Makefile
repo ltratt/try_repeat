@@ -16,12 +16,17 @@ clean:
 # Intentionally empty
 
 
+test:
+	./test.sh
+
+
 distrib:
 	test "X`git status --porcelain`" = "X"
 	@read v?'distrib version: ' \
 	  && mkdir try_repeat-$$v \
 	  && cp -rp COPYRIGHT LICENSE-APACHE LICENSE-MIT \
-	    Makefile CHANGES.md README.md try_repeat try_repeat.1 \
+	    Makefile CHANGES.md README.md test.sh \
+	    try_repeat try_repeat.1 \
 	    try_repeat-$$v \
 	  && tar cfz try_repeat-$$v.tgz try_repeat-$$v \
 	  && rm -rf try_repeat-$$v
