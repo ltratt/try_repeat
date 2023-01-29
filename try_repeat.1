@@ -12,17 +12,21 @@
 .Op Ar options ...
 .Sh DESCRIPTION
 .Nm
-tries to run a command
-.Em n
-times, exiting early if the command exits with a non-zero exit code.
-This is useful when trying to find intermittent failures in a command.
+tries to run
+.Ar command
+at most
+.Ar count
+times, exiting early if
+.Ar command
+exits with a non-zero exit code.
+This is useful when trying to find intermittent failures in
+.Ar command .
 .Pp
 The options are as follows:
 .Bl -tag -width Ds
 .It Fl v
 Print out the iteration number before executing
 .Ar command .
-If
 .El
 .Pp
 .Nm
