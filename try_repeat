@@ -18,7 +18,7 @@ do
         [?]) usage;;
     esac
 done
-shift $(($OPTIND - 1))
+shift $((OPTIND - 1))
 
 if [ $# -lt 2 ]; then
     usage
@@ -27,10 +27,10 @@ fi
 i=0
 count=$1
 shift
-while [ $i -lt $count ]; do
+while [ $i -lt "$count" ]; do
     if [ $verbose -ne 0 ]; then
-        echo "===> $((i + 1)): $@"
+        echo "===> $((i + 1)): $*"
     fi
     "$@" || exit $?
-    i=$(($i + 1))
+    i=$((i + 1))
 done
