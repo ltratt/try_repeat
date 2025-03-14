@@ -8,11 +8,13 @@ intermittent failures in a command.
 # Usage
 
 ```sh
-try_repeat [-hv] <count> <command> [<arg1> ... <argn>]
+try_repeat [-ehv] <count> <command> [<arg1> ... <argn>]
 ```
 
 Options:
 
+ * `-e` Sets an environment variable `TRY_REPEAT_I` with the current execution
+    number. Starts at 1.
  * `-v` Print out the iteration number before executing `<command>`.
 
 `try_repeat` exits with the exit code of the last iteration of `<command>`.

@@ -9,10 +9,12 @@ usage() {
     exit 1
 }
 
+env_var=0
 verbose=0
-while getopts ":hv" f
+while getopts ":ehv" f
 do
     case "$f" in
+        e)   env_var=1;;
         h)   usage;;
         v)   verbose=1;;
         [?]) usage;;
@@ -31,6 +33,10 @@ while [ $i -lt "$count" ]; do
     if [ $verbose -ne 0 ]; then
         echo "===> $((i + 1)): $*"
     fi
-    "$@" || exit $?
+    if [ $env_var -eq 1 ]; then
+        TRY_REPEAT_I=$((i + 1)) "$@" || exit $?
+    else
+        "$@" || exit $?
+    fi
     i=$((i + 1))
 done

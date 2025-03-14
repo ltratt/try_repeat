@@ -6,7 +6,7 @@
 .Nd Run a command 'n' times, exiting early if the command returns non-zero
 .Sh SYNOPSIS
 .Nm try_repeat
-.Op Fl v
+.Op Fl e v
 .Ar count
 .Ar command
 .Op Ar options ...
@@ -24,6 +24,13 @@ This is useful when trying to find intermittent failures in
 .Pp
 The options are as follows:
 .Bl -tag -width Ds
+.It Fl e
+For each execution of
+.Ar command
+set an environment variable
+.Ev TRY_REPEAT_I
+with the current execution number.
+Starts from 1.
 .It Fl v
 Print out the iteration number before executing
 .Ar command .
